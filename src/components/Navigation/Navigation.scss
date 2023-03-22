@@ -1,0 +1,7 @@
+.nav-list {
+  @apply lg:transition-none transition-all duration-200 -right-5 lg:visible invisible lg:opacity-100 opacity-0 ease-in;
+}
+
+.nav-list--open {
+  @apply opacity-100 visible right-[-1px];
+}
