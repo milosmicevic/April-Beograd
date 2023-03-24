@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, forwardRef } from "react";
 import { useTranslation } from "react-i18next";
 import Phone from "../../assets/phone-solid.svg";
 import Mail from "../../assets/envelope-solid.svg";
 
-const NavigationHeader = () => {
+const NavigationHeader = forwardRef((props, ref) => {
   const { t, i18n } = useTranslation();
 
   const [language, setLanguage] = useState(i18n.language);
@@ -14,7 +14,7 @@ const NavigationHeader = () => {
   };
 
   return (
-    <div className="container flex justify-between py-5 text-sm">
+    <div ref={ref} className="container flex justify-between py-5 text-sm">
       {/* <h1 className="text-primary">{t("welcomeMessage")}</h1> */}
 
       <div className="flex gap-2.5 text-base">
@@ -48,6 +48,6 @@ const NavigationHeader = () => {
       </div>
     </div>
   );
-};
+});
 
 export default NavigationHeader;

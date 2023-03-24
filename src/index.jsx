@@ -7,6 +7,7 @@ import LanguageDetector from "i18next-browser-languagedetector";
 import en from "./locales/en.json";
 import srb from "./locales/srb.json";
 
+import HomeSectionOverlay from "./components/HomeSectionOverlay/HomeSectionOverlay";
 import Navigation from "./components/Navigation/Navigation";
 import HomeSection from "./components/HomeSection/HomeSection";
 import OurStorySection from "./components/OurStorySection/OurStorySection";
@@ -43,6 +44,7 @@ i18n
     if (rootElement) {
       ReactDOM.createRoot(rootElement).render(
         <I18nextProvider i18n={i18n}>
+          <HomeSectionOverlay />
           <Navigation />
           <HomeSection onMount={handleMount} />
           <OurStorySection onMount={handleMount} />

@@ -6,7 +6,7 @@ module.exports = {
         primary: "#c19d60",
         gray: {
           "system-1": "#292929",
-          "system-2": "#636366",
+          "system-2": "#ffffff14",
           "system-3": "#48484A",
           "system-4": "#3A3A3C",
           "system-5": "#2C2C2E",

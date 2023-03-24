@@ -1,17 +1,58 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import "./Navigation.scss";
 import NavigationHeader from "./NavigationHeader";
 import Logo from "../../assets/asset 0.svg";
 import Instagram from "../../assets/instagram.svg";
+import { debounce } from "lodash";
 
 //TODO Set active class to navlink which is active
 //TODO Make navigation sticky
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isFixed, setIsFixed] = useState(false);
+
+  const mainNavigationRef = useRef(null);
   const navListRef = useRef(null);
+  const navigationHeaderRef = useRef(null);
+  const mainNavigationContainerRef = useRef(null);
+
   const { t } = useTranslation();
+
+  useEffect(() => {
+    const handleScroll = debounce(() => {
+      const navigationHeaderHeight = navigationHeaderRef.current.offsetHeight;
+      const mainNavigationHeight = mainNavigationRef.current.offsetHeight;
+      const scrollPosition = window.scrollY;
+
+      if (scrollPosition > navigationHeaderHeight && !isFixed) {
+        setIsFixed(true);
+      } else if (scrollPosition <= navigationHeaderHeight && isFixed) {
+        setIsFixed(false);
+      }
+
+      if (scrollPosition > mainNavigationHeight) {
+        setIsFixed(true);
+      } else if (scrollPosition <= mainNavigationHeight && isFixed) {
+        setIsFixed(false);
+      }
+    }, 100);
+
+    window.addEventListener("scroll", handleScroll);
+
+    const setNavigationHeight = () => {
+      mainNavigationRef.current.style.width = mainNavigationContainerRef.current.clientWidth - 48 + "px";
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    setNavigationHeight();
+    window.addEventListener("resize", setNavigationHeight);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [isFixed]);
 
   const handleMenuClick = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -28,9 +69,14 @@ const Navigation = () => {
 
   return (
     <header>
-      <NavigationHeader />
-      <div className="container">
-        <div className="sticky top-0 flex items-center justify-between h-20 pl-6 text-sm duration-200 border bg-gray-system-1 border-gray-system-2">
+      <NavigationHeader ref={navigationHeaderRef} />
+      <div className="container" ref={mainNavigationContainerRef}>
+        <div
+          ref={mainNavigationRef}
+          className={`${
+            isFixed ? " -translate-y-16" : ""
+          } transition-transform fixed flex items-center justify-between h-20 pl-6 text-sm border bg-gray-system-1 border-gray-system-2`}
+        >
           <div className="logo">
             <a href="/">
               <img src={Logo} className="h-14" alt="My Logo" />
