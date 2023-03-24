@@ -106,7 +106,7 @@ const Navigation = ({ sectionRefs }) => {
         >
           <div className="logo">
             <a href="/">
-              <img src={Logo} className="h-14" alt="My Logo" />
+              <img src={Logo} className="w-[106px]  h-14" alt="My Logo" />
             </a>
           </div>
           <nav className="h-[70px]">
