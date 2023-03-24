@@ -120,7 +120,7 @@ const Navigation = ({ sectionRefs }) => {
                     key={link.href}
                     className={`${
                       link.href == "#" + activeSectionId ? "text-primary" : "text-white"
-                    } duration-200 hover:text-primary nav-item`}
+                    } duration-200 md:hover:text-primary nav-item`}
                   >
                     <a href={link.href} aria-label={t(link.label)}>
                       {t(link.label)}
