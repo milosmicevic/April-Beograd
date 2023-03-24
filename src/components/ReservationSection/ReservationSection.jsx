@@ -1,7 +1,11 @@
-import React from "react";
+import React, { forwardRef } from "react";
 
-const ReservationSection = () => {
-  return <section id="reservation-section">ReservationSection</section>;
-};
+const ReservationSection = forwardRef((props, ref) => {
+  return (
+    <section ref={ref} id="reservation-section">
+      ReservationSection
+    </section>
+  );
+});
 
 export default ReservationSection;

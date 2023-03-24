@@ -7,15 +7,7 @@ import LanguageDetector from "i18next-browser-languagedetector";
 import en from "./locales/en.json";
 import srb from "./locales/srb.json";
 
-import HomeSectionOverlay from "./components/HomeSectionOverlay/HomeSectionOverlay";
-import Navigation from "./components/Navigation/Navigation";
-import HomeSection from "./components/HomeSection/HomeSection";
-import OurStorySection from "./components/OurStorySection/OurStorySection";
-import ReservationSection from "./components/ReservationSection/ReservationSection";
-import MenuSection from "./components/MenuSection/MenuSection";
-import BeveragesListSection from "./components/BeveragesListSection/BeveragesListSection";
-import GallerySection from "./components/GallerySection/GallerySection";
-import ContactSection from "./components/ContactSection/ContactSection";
+import App from "../src/components/App";
 
 i18n
   .use(LanguageDetector)
@@ -40,15 +32,7 @@ i18n
     if (rootElement) {
       ReactDOM.createRoot(rootElement).render(
         <I18nextProvider i18n={i18n}>
-          <HomeSectionOverlay />
-          <Navigation />
-          <HomeSection />
-          <OurStorySection />
-          <ReservationSection />
-          <MenuSection />
-          <BeveragesListSection />
-          <GallerySection />
-          <ContactSection />
+          <App />
         </I18nextProvider>
       );
     }

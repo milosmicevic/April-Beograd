@@ -1,7 +1,11 @@
-import React from "react";
+import React, { forwardRef } from "react";
 
-const MenuSection = () => {
-  return <section id="menu-section">MenuSection</section>;
-};
+const MenuSection = forwardRef((props, ref) => {
+  return (
+    <section ref={ref} id="menu-section">
+      MenuSection
+    </section>
+  );
+});
 
 export default MenuSection;

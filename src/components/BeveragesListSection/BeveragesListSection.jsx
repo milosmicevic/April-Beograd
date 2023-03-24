@@ -1,7 +1,11 @@
-import React from "react";
+import React, { forwardRef } from "react";
 
-const BeveragesListSection = () => {
-  return <section id="beverages-list-section">BeveragesListSection</section>;
-};
+const BeveragesListSection = forwardRef((props, ref) => {
+  return (
+    <section ref={ref} id="beverages-list-section">
+      BeveragesListSection
+    </section>
+  );
+});
 
 export default BeveragesListSection;

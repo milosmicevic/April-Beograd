@@ -6,11 +6,10 @@ import Logo from "../../assets/asset 0.svg";
 import Instagram from "../../assets/instagram.svg";
 import { debounce } from "lodash";
 
-//TODO Set active class to navlink which is active
-
-const Navigation = () => {
+const Navigation = ({ sectionRefs }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isFixed, setIsFixed] = useState(false);
+  const [activeSectionId, setActiveSectionId] = useState("#home-section");
 
   const mainNavigationRef = useRef(null);
   const navListRef = useRef(null);
@@ -29,7 +28,32 @@ const Navigation = () => {
 
   const { t } = useTranslation();
 
+  const handleMenuClick = () => {
+    setIsMenuOpen(!isMenuOpen);
+    navListRef.current.classList.toggle("nav-list--open");
+  };
+
+  const handleIntersection = (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        setActiveSectionId(entry.target.id);
+      }
+    });
+  };
+
   useEffect(() => {
+    const observer = new IntersectionObserver(handleIntersection, {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.9,
+    });
+
+    const sections = sectionRefs;
+
+    sections.forEach((section) => {
+      observer.observe(section.current);
+    });
+
     const handleScroll = debounce(() => {
       const navigationHeaderHeight = navigationHeaderRef.current.offsetHeight;
       const mainNavigationHeight = mainNavigationRef.current.offsetHeight;
@@ -54,19 +78,21 @@ const Navigation = () => {
       mainNavigationRef.current.style.width = mainNavigationContainerRef.current.clientWidth - 48 + "px";
     };
 
-    window.addEventListener("scroll", handleScroll);
     setNavigationHeight();
+    window.addEventListener("scroll", handleScroll);
     window.addEventListener("resize", setNavigationHeight);
+    window.addEventListener("load", () => {
+      window.scrollTo(0, 0);
+    });
 
     return () => {
+      sections.forEach((section) => {
+        observer.unobserve(section.current);
+      });
+
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [isFixed]);
-
-  const handleMenuClick = () => {
-    setIsMenuOpen(!isMenuOpen);
-    navListRef.current.classList.toggle("nav-list--open");
-  };
+  }, [isFixed, activeSectionId]);
 
   return (
     <header>
@@ -90,7 +116,12 @@ const Navigation = () => {
                 className="nav-list font-semibold absolute right-[-1px] lg:w-full w-[161px] flex flex-col gap-5 px-4 py-4 border-b top-full lg:flex-row lg:static lg:py-0 bg-gray-system-1 lg:border-none border-x border-gray-system-2"
               >
                 {navigationLinks.map((link) => (
-                  <li key={link.href} className="duration-200 hover:text-primary nav-item">
+                  <li
+                    key={link.href}
+                    className={`${
+                      link.href == "#" + activeSectionId ? "text-primary" : "text-white"
+                    } duration-200 hover:text-primary nav-item`}
+                  >
                     <a href={link.href} aria-label={t(link.label)}>
                       {t(link.label)}
                     </a>

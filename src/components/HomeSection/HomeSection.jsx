@@ -1,12 +1,12 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import "./HomeSection.scss";
 import { useTranslation } from "react-i18next";
 import BrushImage from "../../assets/asset 18.png";
 
-const HomeSection = () => {
+const HomeSection = forwardRef((props, ref) => {
   const { t } = useTranslation();
   return (
-    <section id="home-section" className="relative grid place-items-center -mt-[60px]">
+    <section ref={ref} id="home-section" className="relative grid place-items-center -mt-[60px]">
       <div className="container">
         <div className="hero-title-container relative max-w-full sm:max-w-[70%] lg:max-w-[50%]">
           <p className="text-base italic font-playfairDisplay">{t("heroSubTitle")}</p>
@@ -28,6 +28,6 @@ const HomeSection = () => {
       <img src={BrushImage} className="absolute -bottom-[1px] w-full" alt="Brush Effect Image" />
     </section>
   );
-};
+});
 
 export default HomeSection;

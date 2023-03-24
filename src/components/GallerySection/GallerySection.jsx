@@ -1,7 +1,11 @@
-import React from "react";
+import React, { forwardRef } from "react";
 
-const GallerySection = () => {
-  return <section id="gallery-section">GallerySection</section>;
-};
+const GallerySection = forwardRef((props, ref) => {
+  return (
+    <section ref={ref} id="gallery-section">
+      GallerySection
+    </section>
+  );
+});
 
 export default GallerySection;
