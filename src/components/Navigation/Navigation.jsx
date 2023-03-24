@@ -45,7 +45,7 @@ const Navigation = ({ sectionRefs }) => {
     const observer = new IntersectionObserver(handleIntersection, {
       root: null,
       rootMargin: "0px",
-      threshold: 0.9,
+      threshold: 0.85,
     });
 
     const sections = sectionRefs;
