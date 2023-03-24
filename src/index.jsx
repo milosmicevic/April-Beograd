@@ -37,22 +37,18 @@ i18n
   .then(() => {
     const rootElement = document.getElementById("root");
 
-    const handleMount = (id, ref) => {
-      sectionRefs.current[id] = ref;
-    };
-
     if (rootElement) {
       ReactDOM.createRoot(rootElement).render(
         <I18nextProvider i18n={i18n}>
           <HomeSectionOverlay />
           <Navigation />
-          <HomeSection onMount={handleMount} />
-          <OurStorySection onMount={handleMount} />
-          <ReservationSection onMount={handleMount} />
-          <MenuSection onMount={handleMount} />
-          <BeveragesListSection onMount={handleMount} />
-          <GallerySection onMount={handleMount} />
-          <ContactSection onMount={handleMount} />
+          <HomeSection />
+          <OurStorySection />
+          <ReservationSection />
+          <MenuSection />
+          <BeveragesListSection />
+          <GallerySection />
+          <ContactSection />
         </I18nextProvider>
       );
     }
