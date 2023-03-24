@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Playfair+Display:wght@400;500;600&display=swap");
 
 /*
   1. Use a more-intuitive box-sizing model.
@@ -74,22 +75,22 @@ h6 {
 }
 
 h1 {
-  @apply text-5xl lg:text-6xl;
-}
-h2 {
   @apply text-4xl lg:text-5xl;
 }
-h3 {
+h2 {
   @apply text-3xl lg:text-4xl;
 }
-h4 {
+h3 {
   @apply text-2xl lg:text-3xl;
 }
-h5 {
+h4 {
   @apply text-xl lg:text-2xl;
 }
-h6 {
+h5 {
   @apply text-lg lg:text-xl;
+}
+h6 {
+  @apply text-base lg:text-lg;
 }
 
 p {
@@ -101,7 +102,8 @@ p {
 }
 
 section {
-  display: grid;
-  place-content: center;
+  &:nth-child(even) {
+    @apply py-16 md:py-24;
+  }
   height: 100vh;
 }

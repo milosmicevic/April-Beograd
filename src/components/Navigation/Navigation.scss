@@ -1,7 +1,20 @@
-.nav-list {
-  @apply lg:transition-none transition-all duration-200 -right-5 lg:visible invisible lg:opacity-100 opacity-0 ease-in;
-}
+header {
+  .contact-link-container {
+    &:hover {
+      .contact-link-label {
+        @apply text-white;
+      }
+      .contact-link {
+        @apply text-primary;
+      }
+    }
+  }
 
-.nav-list--open {
-  @apply opacity-100 visible right-[-1px];
+  .nav-list {
+    @apply lg:transition-none transition-all duration-200 -right-5 lg:visible invisible lg:opacity-100 opacity-0 ease-in;
+  }
+
+  .nav-list--open {
+    @apply opacity-100 visible right-[-1px];
+  }
 }

@@ -14,10 +14,10 @@ const NavigationHeader = forwardRef((props, ref) => {
   };
 
   return (
-    <div ref={ref} className="container flex justify-between py-5 text-sm">
+    <div ref={ref} className="container relative z-10 flex justify-between py-5 text-sm font-semibold font-playfairDisplay">
       {/* <h1 className="text-primary">{t("welcomeMessage")}</h1> */}
 
-      <div className="flex gap-2.5 text-base">
+      <div className="flex gap-2.5">
         <button
           className={language === "srb" ? "text-primary" : "text-white"}
           onClick={() => handleChangeLanguage("srb")}
@@ -35,14 +35,14 @@ const NavigationHeader = forwardRef((props, ref) => {
         </button>
       </div>
       <div className="flex gap-5">
-        <a href="tel:+381 060/626-26-20">
-          <span className="hidden mr-2 lg:inline-block text-primary">{t("headerPhone")}</span>{" "}
-          <span className="hidden lg:inline-block">+381 060/626-26-20</span>
+        <a className="contact-link-container" href="tel:+381 060/626-26-20">
+          <span className="hidden mr-2 duration-200 contact-link-label lg:inline-block text-primary">{t("headerPhone")}</span>{" "}
+          <span className="hidden duration-200 contact-link lg:inline-block">+381 060/626-26-20</span>
           <img src={Phone} className="w-5 h-5 lg:hidden" alt="Call us button" />
         </a>
-        <a href="mailto:rezervacije@aprilbeograd.com">
-          <span className="hidden mr-2 lg:inline-block text-primary">{t("headerMail")}</span>
-          <span className="hidden lg:inline-block"> rezervacije@aprilbeograd.com</span>
+        <a className="contact-link-container" href="mailto:rezervacije@aprilbeograd.com">
+          <span className="hidden mr-2 duration-200 contact-link-label lg:inline-block text-primary">{t("headerMail")}</span>
+          <span className="hidden duration-200 contact-link lg:inline-block"> rezervacije@aprilbeograd.com</span>
           <img src={Mail} className="w-5 h-5 lg:hidden" alt="Mail us button" />
         </a>
       </div>

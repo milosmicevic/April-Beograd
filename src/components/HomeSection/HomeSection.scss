@@ -1,0 +1,37 @@
+#home-section {
+  .hero-title-container {
+    p {
+      &:before {
+        content: "\25CF\25CF\25CF\25CF\25CF";
+        @apply absolute -top-10 left-0 w-14 h-[1px] text-[8px] tracking-[6px] text-white;
+      }
+    }
+
+    a {
+      &:hover {
+        @apply bg-white text-black;
+      }
+    }
+  }
+
+  .scroll-down-indicator {
+    animation-name: scroll;
+    animation-duration: 2.2s;
+    animation-timing-function: cubic-bezier(0.15, 0.41, 0.69, 0.94);
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes scroll {
+    0% {
+      opacity: 0;
+    }
+    10% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(12px);
+      opacity: 0;
+    }
+  }
+}
