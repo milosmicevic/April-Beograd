@@ -9,7 +9,7 @@ import { debounce } from "lodash";
 const Navigation = ({ sectionRefs }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isFixed, setIsFixed] = useState(false);
-  const [activeSectionId, setActiveSectionId] = useState("#home-section");
+  const [activeSectionId, setActiveSectionId] = useState(false);
 
   const mainNavigationRef = useRef(null);
   const navListRef = useRef(null);
