@@ -8,6 +8,13 @@ import en from "./locales/en.json";
 import srb from "./locales/srb.json";
 
 import Navigation from "./components/Navigation/Navigation";
+import HomeSection from "./components/HomeSection/HomeSection";
+import OurStorySection from "./components/OurStorySection/OurStorySection";
+import ReservationSection from "./components/ReservationSection/ReservationSection";
+import MenuSection from "./components/MenuSection/MenuSection";
+import BeveragesListSection from "./components/BeveragesListSection/BeveragesListSection";
+import GallerySection from "./components/GallerySection/GallerySection";
+import ContactSection from "./components/ContactSection/ContactSection";
 
 i18n
   .use(LanguageDetector)
@@ -29,10 +36,21 @@ i18n
   .then(() => {
     const rootElement = document.getElementById("root");
 
+    const handleMount = (id, ref) => {
+      sectionRefs.current[id] = ref;
+    };
+
     if (rootElement) {
       ReactDOM.createRoot(rootElement).render(
         <I18nextProvider i18n={i18n}>
           <Navigation />
+          <HomeSection onMount={handleMount} />
+          <OurStorySection onMount={handleMount} />
+          <ReservationSection onMount={handleMount} />
+          <MenuSection onMount={handleMount} />
+          <BeveragesListSection onMount={handleMount} />
+          <GallerySection onMount={handleMount} />
+          <ContactSection onMount={handleMount} />
         </I18nextProvider>
       );
     }

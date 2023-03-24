@@ -25,6 +25,7 @@
 html,
 body {
   height: 100%;
+  scroll-behavior: smooth;
 }
 /*
   Typographic tweaks!
@@ -97,4 +98,10 @@ p {
 
 .container {
   @apply mx-auto px-6;
+}
+
+section {
+  display: grid;
+  place-content: center;
+  height: 100vh;
 }
