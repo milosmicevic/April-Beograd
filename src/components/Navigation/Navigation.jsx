@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import "./Navigation.scss";
 import NavigationHeader from "./NavigationHeader";
-import Logo from "../../assets/asset 0.svg";
+import Logo from "../../assets/logo.svg";
 import Instagram from "../../assets/instagram.svg";
 import { debounce } from "lodash";
 

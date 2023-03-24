@@ -1,7 +1,7 @@
 import React, { forwardRef } from "react";
 import "./HomeSection.scss";
 import { useTranslation } from "react-i18next";
-import BrushImage from "../../assets/asset 18.png";
+import BrushImage from "../../assets/brush-down.webp";
 
 const HomeSection = forwardRef((props, ref) => {
   const { t } = useTranslation();
