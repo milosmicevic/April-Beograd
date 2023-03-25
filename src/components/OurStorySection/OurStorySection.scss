@@ -1,0 +1,34 @@
+#our-story-section {
+  .separator {
+    &::after {
+      content: "\25CF\25CF\25CF\25CF\25CF\25CF";
+      @apply text-white/50 text-[8px] inline-block w-[60px] tracking-[4px];
+    }
+  }
+
+  .our-story-link {
+    &:hover {
+      span {
+        animation: rotateX 500ms ease-in-out;
+      }
+    }
+  }
+
+  .our-story-main-image {
+    box-shadow: 0 9px 16px rgba(0, 0, 0, 0.35);
+  }
+
+  .our-story-secondary-image {
+    height: calc(110% - 192px);
+    top: 4%;
+  }
+
+  @keyframes rotateX {
+    0% {
+      transform: rotateX(0deg);
+    }
+    100% {
+      transform: rotateX(360deg);
+    }
+  }
+}

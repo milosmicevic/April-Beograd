@@ -6,7 +6,7 @@ import BrushImage from "../../assets/brush-down.webp";
 const HomeSection = forwardRef((props, ref) => {
   const { t } = useTranslation();
   return (
-    <section ref={ref} id="home-section" className="relative grid place-items-center -mt-[60px]">
+    <section ref={ref} id="home-section" className="relative grid place-items-center -mt-[60px] min-h-screen">
       <div className="container">
         <div className="hero-title-container relative max-w-full sm:max-w-[70%] lg:max-w-[50%]">
           <p className="text-base italic font-playfairDisplay">{t("heroSubTitle")}</p>
@@ -18,7 +18,7 @@ const HomeSection = forwardRef((props, ref) => {
             {t("heroButtonText")} <span className="-mt-1 text-lg"> &#x2192;</span>
           </a>
         </div>
-        <div className="absolute flex items-center gap-5 text-xs font-semibold bottom-20">
+        <div className="absolute flex items-center gap-5 text-xs font-semibold bottom-28">
           <div className="w-5 h-8 border-[2px] border-white rounded-md scroll-down-indicator-container p-1.5">
             <div className="w-1 h-1 rounded-full bg-primary scroll-down-indicator"></div>
           </div>

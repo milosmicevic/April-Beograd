@@ -11,5 +11,11 @@
 
   "heroSubTitle": "Top Services and Premium Cuisine!",
   "heroTitle": "NEW RESTAURANT IN THE CENTER OF BELGRADE",
-  "heroButtonText": "Check out our Menu"
+  "heroButtonText": "Check out our Menu",
+
+  "ourStoryLabel": "Our story",
+  "ourStoryTitle": "Few words about us",
+  "ourStoryParagraphOne": "Restaurant, bar and caffe April Beograd allows its visitors to enjoy an exclusive and luxurious ambient along with top-quality food. To top it off, April Beograd is located in the center of Belgrade.",
+  "ourStoryParagraphTwo": "Thanks to many years of experience in catering industry, we have managed to reach the peak of our business by offering a quality diverse menu, fast and quality service, good atmosphere, all in a cozy and modern environment, and in an attractive location.",
+  "ourStoryButtonText": "Explore Our Menu"
 }
