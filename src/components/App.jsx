@@ -1,5 +1,6 @@
-import React, { useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
 
+import Loader from "./Loader/Loader";
 import HomeSectionOverlay from "./HomeSectionOverlay/HomeSectionOverlay";
 import Navigation from "./Navigation/Navigation";
 import HomeSection from "./HomeSection/HomeSection";
@@ -19,15 +20,6 @@ const App = () => {
   const gallerySectionRef = useRef(null);
   const contactSectionRef = useRef(null);
 
-  //   const sectionRefs = {
-  //     "#home-section": homeSectionRef,
-  //     "#our-story-section": ourStorySectionRef,
-  //     "#reservation-section": reservationSectionRef,
-  //     "#menu-section": menuSectionRef,
-  //     "#beverages-list-section": beveragesListSectionRef,
-  //     "#gallery-section": gallerySectionRef,
-  //     "#contact-section": contactSectionRef,
-  //   };
   const sectionRefs = [
     homeSectionRef,
     ourStorySectionRef,
@@ -37,8 +29,19 @@ const App = () => {
     gallerySectionRef,
     contactSectionRef,
   ];
+
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+  }, []);
+
   return (
     <React.Fragment>
+      <Loader isLoading={isLoading} />
+      {/* {isLoading ? <Loader isLoading={isLoading} /> : ""} */}
       <HomeSectionOverlay />
       <Navigation sectionRefs={sectionRefs} />
       <HomeSection ref={homeSectionRef} />

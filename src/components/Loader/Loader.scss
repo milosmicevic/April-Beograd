@@ -1,0 +1,45 @@
+.loader-wrap {
+  @apply fixed top-0 bottom-0 left-0 right-0 overflow-hidden z-[51];
+
+  .cd-loader-layer {
+    @apply absolute top-0 left-0 h-full w-full opacity-100 visible overflow-hidden z-10;
+
+    .loader-layer {
+      @apply absolute left-1/2 top-1/2 h-full w-[2500%];
+      transform: translateY(-50%) translateX(-98%);
+      background: url("../../assets/loader.webp") no-repeat 0 0;
+      background-size: 100% 100%;
+    }
+
+    &.opening {
+      .loader-layer {
+        animation: cd-sequence 0.8s steps(24);
+        animation-fill-mode: forwards;
+      }
+    }
+
+    &.closing {
+      .loader-layer {
+        animation: cd-sequence-reverse 0.8s steps(24);
+        animation-fill-mode: forwards;
+      }
+    }
+  }
+  @keyframes cd-sequence {
+    0% {
+      transform: translateY(-50%) translateX(-2%);
+    }
+    100% {
+      transform: translateY(-50%) translateX(-98%);
+    }
+  }
+
+  @keyframes cd-sequence-reverse {
+    0% {
+      transform: translateY(-50%) translateX(-98%);
+    }
+    100% {
+      transform: translateY(-50%) translateX(-2%);
+    }
+  }
+}
