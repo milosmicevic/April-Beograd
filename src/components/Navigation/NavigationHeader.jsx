@@ -1,4 +1,4 @@
-import React, { useState, forwardRef } from "react";
+import React, { useState, useEffect, forwardRef } from "react";
 import { useTranslation } from "react-i18next";
 import Phone from "../../assets/phone-solid.svg";
 import Mail from "../../assets/envelope-solid.svg";
@@ -6,7 +6,7 @@ import Mail from "../../assets/envelope-solid.svg";
 const NavigationHeader = forwardRef((props, ref) => {
   const { t, i18n } = useTranslation();
 
-  const [language, setLanguage] = useState("en");
+  const [language, setLanguage] = useState(i18n.language);
 
   const handleChangeLanguage = (selectedLanguage) => {
     setLanguage(selectedLanguage);
