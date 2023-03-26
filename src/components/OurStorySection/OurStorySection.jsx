@@ -20,7 +20,7 @@ const OurStorySection = forwardRef((props, ref) => {
             <p className="text-sm leading-6">{t("ourStoryParagraphTwo")}</p>
           </div>
           <a
-            className="flex font-semibold items-center gap-8 py-3.5 px-5 font-playfairDisplay w-max text-sm bg-primary our-story-link"
+            className="flex font-semibold items-center gap-8 py-3.5 px-5 font-playfairDisplay w-max text-sm bg-primary/60 our-story-link"
             href="#menu-section"
           >
             {t("ourStoryButtonText")} <span className="-mt-1 text-lg duration-500"> &#x2192;</span>
