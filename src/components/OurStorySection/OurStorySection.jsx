@@ -31,7 +31,7 @@ const OurStorySection = forwardRef((props, ref) => {
           <img src={CubeImage} className="absolute right-0 -top-10 xl:-right-32" alt="Cube Shape Image" />
         </div>
         <div className="relative flex justify-end flex-1 our-story-main-image-container">
-          <img className="w-full xl:w-5/6 xl:h-[85%]  z-10 our-story-main-image" src={OurStoryMainImage} alt="Our Story Main Image" />
+          <img className="w-full xl:h-[85%] aspect-[1.53] z-10 our-story-main-image" src={OurStoryMainImage} alt="Our Story Main Image" />
         </div>
       </div>
       <img
