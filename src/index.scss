@@ -103,7 +103,7 @@ p {
 
 section {
   &:nth-child(odd) {
-    @apply py-16 md:py-24;
+    @apply py-16 md:pt-24 md:pb-28;
   }
   // min-height: 100vh;
 }

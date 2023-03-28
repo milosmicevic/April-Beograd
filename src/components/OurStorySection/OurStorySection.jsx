@@ -3,14 +3,16 @@ import { useTranslation } from "react-i18next";
 import "./OurStorySection.scss";
 import OurStoryMainImage from "../../assets/our-story-main.webp";
 import OurStorySecondaryImage from "../../assets/our-story-secondary.webp";
+import WaveImage from "../../assets/wave.webp";
+import CubeImage from "../../assets/cube.webp";
 
 const OurStorySection = forwardRef((props, ref) => {
   const { t } = useTranslation();
   return (
     <section ref={ref} id="our-story-section" className="relative grid bg-gray-system-3 place-items-center">
-      <div className="container flex gap-28">
-        <div className="flex-1">
-          <div className="our-story-title-container">
+      <div className="container flex flex-col xl:flex-row gap-14 xl:gap-28">
+        <div className="relative flex-1">
+          <div className="relative our-story-title-container">
             <p className="italic text-primary font-playfairDisplay">{t("ourStoryLabel")}</p>
             <h2 className="font-playfairDisplay">{t("ourStoryTitle")}</h2>
             <div className="mb-8 separator"></div>
@@ -25,12 +27,18 @@ const OurStorySection = forwardRef((props, ref) => {
           >
             {t("ourStoryButtonText")} <span className="-mt-1 text-lg duration-500"> &#x2192;</span>
           </a>
+          <img src={WaveImage} className="absolute -bottom-10 -left-32" alt="Wave Shape Image" />
+          <img src={CubeImage} className="absolute right-0 -top-10 xl:-right-32" alt="Cube Shape Image" />
         </div>
-        <div className="flex justify-end flex-1">
-          <img className="w-5/6 h-[85%] relative z-10 our-story-main-image" src={OurStoryMainImage} alt="Our Story Main Image" />
+        <div className="relative flex justify-end flex-1 our-story-main-image-container">
+          <img className="w-full xl:w-5/6 xl:h-[85%]  z-10 our-story-main-image" src={OurStoryMainImage} alt="Our Story Main Image" />
         </div>
       </div>
-      <img className="absolute right-0 our-story-secondary-image" src={OurStorySecondaryImage} alt="Our Story Secondary Image" />
+      <img
+        className="absolute right-0 hidden our-story-secondary-image xl:block"
+        src={OurStorySecondaryImage}
+        alt="Our Story Secondary Image"
+      />
     </section>
   );
 });
