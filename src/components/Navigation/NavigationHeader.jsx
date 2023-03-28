@@ -6,7 +6,7 @@ import Mail from "../../assets/envelope-solid.svg";
 const NavigationHeader = forwardRef((props, ref) => {
   const { t, i18n } = useTranslation();
 
-  const [language, setLanguage] = useState(i18n.language ? i18n.language : "en");
+  const [language, setLanguage] = useState(i18n.language);
 
   const handleChangeLanguage = (selectedLanguage) => {
     setLanguage(selectedLanguage);
@@ -15,8 +15,6 @@ const NavigationHeader = forwardRef((props, ref) => {
 
   return (
     <div ref={ref} className="container relative z-10 flex justify-between py-5 text-sm font-semibold font-playfairDisplay">
-      {/* <h1 className="text-primary">{t("welcomeMessage")}</h1> */}
-
       <div className="flex gap-2.5">
         <button
           className={language === "srb" ? "text-primary" : "text-white"}
