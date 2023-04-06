@@ -1,0 +1,17 @@
+#reservation-section {
+  .overlay-image {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    will-change: transform;
+  }
+
+  .dots-separator {
+    &::after {
+      content: "●●●●●●";
+      @apply inline-block w-[60px] text-[8px] text-primary;
+      letter-spacing: 4px;
+    }
+  }
+}

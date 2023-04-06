@@ -17,5 +17,11 @@
   "ourStoryTitle": "Few words about us",
   "ourStoryParagraphOne": "Restaurant, bar and caffe April Beograd allows its visitors to enjoy an exclusive and luxurious ambient along with top-quality food. To top it off, April Beograd is located in the center of Belgrade.",
   "ourStoryParagraphTwo": "Thanks to many years of experience in catering industry, we have managed to reach the peak of our business by offering a quality diverse menu, fast and quality service, good atmosphere, all in a cozy and modern environment, and in an attractive location.",
-  "ourStoryButtonText": "Explore Our Menu"
+  "ourStoryButtonText": "Explore Our Menu",
+
+  "reservationQuote": "“Life, if well lived, is long enough.”",
+  "reservationLabel": "Call For Reservations",
+  "reservationTitle": "Opening Hours",
+  "reservationSubTitleOne": "Monday to Friday",
+  "reservationSubTitleTwo": "Saturday to Sunday"
 }

@@ -81,9 +81,9 @@ const Navigation = ({ sectionRefs }) => {
     setNavigationHeight();
     window.addEventListener("scroll", handleScroll);
     window.addEventListener("resize", setNavigationHeight);
-    window.addEventListener("load", () => {
-      window.scrollTo(0, 0);
-    });
+    // window.addEventListener("load", () => {
+    //   window.scrollTo(0, 0);
+    // });
 
     return () => {
       sections.forEach((section) => {
